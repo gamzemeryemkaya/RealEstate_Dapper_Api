@@ -77,5 +77,23 @@ namespace RealEstate_Dapper_Api.Repositories.CategoryRepository
                 await connectiont.ExecuteAsync(query, parameters);
             }
         }
+
+        /// <summary>
+        /// Belirtilen kategori ID'sine sahip kategoriyi veritabanından alır.
+        /// </summary>
+
+        public async Task<GetByIDCategoryDto> GetCategory(int id)
+        {
+           // Belirtilen kategori ID'sine sahip kategoriyi seçer.
+            string query = "Select * From Category Where CategoryID=@CategoryID";
+            var parameters = new DynamicParameters();
+            parameters.Add("@CategoryID", id);
+            //Veritabanı bağlantısı oluşturulur ve sorgu sonucunda ilk eşleşen kategori bilgileri alınır.
+            using (var connection = _context.CreateConnection())
+            {
+                var values = await connection.QueryFirstOrDefaultAsync<GetByIDCategoryDto>(query, parameters);
+                return values;
+            }
+        }
     }
 }

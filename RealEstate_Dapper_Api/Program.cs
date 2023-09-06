@@ -1,11 +1,22 @@
 using RealEstate_Dapper_Api.Models.DapperContext;
 using RealEstate_Dapper_Api.Repositories.CategoryRepository;
+using RealEstate_Dapper_Api.Repositories.ProductRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+//Transient ba??ml?l?k enjeksiyonu, her talep edildi?inde yeni bir nesne örne?i olu?turur.
+// Bu sat?rda, her bir "Context" nesnesi için yeni bir örnek olu?turulur.
+// "Context" nesnesi genellikle veritaban? ba?lant?s?n? temsil eder ve her ba?lant?
+// için ayr? bir ba?lant? nesnesi olu?turulmas? veritaban? i?lemlerini izole eder.
 builder.Services.AddTransient<Context>();
 
+// Bu sat?rda, "ICategoryRepository" arayüzü için her bir talepte yeni bir
+// "CategoryRepository" s?n?f? örne?i olu?turulur. Bu, her "CategoryRepository"
+// kullan?m?nda yeni bir ba??ml?l?k örne?i sa?lar ve ba??ml?l?klar?n izole edilmesini
+// ve veri payla??m?n?n önlenmesini sa?lar.
 builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
+builder.Services.AddTransient<IProductRepository, ProductRepository>();
 // Add services to the container.
 
 builder.Services.AddControllers();
