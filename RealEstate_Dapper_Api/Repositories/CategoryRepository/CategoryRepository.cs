@@ -21,5 +21,17 @@ namespace RealEstate_Dapper_Api.Repositories.CategoryRepository
                 return values.ToList();
             }
         }
+
+        public async void CreateCategory(CreateCategoryDto categoryDto)
+        {
+            string query = "insert into Category (CategoryName,CategoryStatus) values (@categoryName,@categoryStatus)";
+            var parameters = new DynamicParameters();
+            parameters.Add("@categoryName", categoryDto.CategoryName);
+            parameters.Add("@categoryStatus", true);
+            using (var connection = _context.CreateConnection())
+            {
+                await connection.ExecuteAsync(query, parameters);
+            }
+        }
     }
 }
