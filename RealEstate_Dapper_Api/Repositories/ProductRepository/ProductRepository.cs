@@ -29,7 +29,7 @@ namespace RealEstate_Dapper_Api.Repositories.ProductRepository
         {
             // Ürünler tablosu ile Kategori tablosu arasında birleştirme yaparak
             // ürünlerin ve ilgili kategori bilgilerinin seçimini gerçekleştirir.
-            string query = "Select ProductID,Title,Price,City,District,CategoryName From Product inner join Category on Product.ProductCategory=Category.CategoryID";
+            string query = "Select ProductID,Title,Price,City,District,CategoryName,CoverImage,Type,Address From Product inner join Category on Product.ProductCategory=Category.CategoryID";
             using (var connection = _context.CreateConnection())
             {
                 var values = await connection.QueryAsync<ResultProductWithCategoryDto>(query);
