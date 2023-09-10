@@ -18,7 +18,7 @@ Bu proje, ASP.Net Core 8.0 kullanarak Emlak işlemleri için tasarlanmış olan 
 
 - **API ve UI**: Proje, bir API ve bir UI projesi içermektedir. API, veri işleme ve sunma görevlerini yerine getirirken, UI projesi kullanıcı arayüzünü oluşturur.
 
-- **Yapısal Düzen**: Katmanlı mimari yerine, daha düzenli ve temiz bir yapı kullanmak amacıyla "structre folder" yapısı tercih edilmiştir.
+- **Yapısal Düzen**: Katmanlı mimari yerine, daha düzenli ve temiz bir yapı kullanmak amacıyla "folder structre" yapısı tercih edilmiştir.
 
 - **View Componentler**: UI bileşenleri oluşturmak için View Componentler kullanılmıştır.
 
