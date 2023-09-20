@@ -33,3 +33,7 @@ Bu proje, ASP.Net Core 8.0 kullanarak Emlak işlemleri için tasarlanmış olan 
 ![Uygulama Ekran Görüntüsü](https://github.com/gamzemeryemkaya/RealEstate_Dapper_Api/blob/master/projectimages/realimages1.png?raw=true)
 
 ![Uygulama Ekran Görüntüsü](https://github.com/gamzemeryemkaya/RealEstate_Dapper_Api/blob/master/projectimages/realimages3.png?raw=true)
+
+![Uygulama Ekran Görüntüsü](https://github.com/gamzemeryemkaya/RealEstate_Dapper_Api/blob/master/projectimages/realestate4.png?raw=true)
+
+
