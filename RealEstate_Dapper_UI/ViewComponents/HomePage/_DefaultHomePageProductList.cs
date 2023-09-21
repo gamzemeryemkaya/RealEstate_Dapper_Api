@@ -29,7 +29,7 @@ namespace RealEstate_Dapper_UI.ViewComponents.HomePage
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
 
                 // JSON verisi bir metin formatına dönüştürülür (deserialization).
-                var values = JsonConvert.DeserializeObject<List<ResultProductDtos>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultProductDto>>(jsonData);
 
                 // Bu nesne bir View'a veri olarak gönderilir ve görünüm döndürülür.
                 return View(values);
